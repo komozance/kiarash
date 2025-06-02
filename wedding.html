@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Wedding Herald - Nesa & Kiarash</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Old+Standard+TT:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Crimson Text', serif;
+      background: #f4f1e8;
+      color: #2d1810;
+      line-height: 1.5;
+      font-size: 13px;
+    }
+
+    .newspaper {
+      max-width: 11in;
+      margin: 0 auto;
+      background: #faf8f2;
+      padding: 0.5in;
+      box-shadow: 0 0 20px rgba(139, 69, 19, 0.3);
+      border: 3px solid #8b4513;
+    }
+
+    .ornamental-border {
+      border: 2px solid #8b4513;
+      border-style: double;
+      margin: 10px 0;
+      padding: 10px;
+    }
+
+    .header {
+      text-align: center;
+      border-bottom: 5px double #8b4513;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      background: linear-gradient(45deg, #faf8f2 0%, #f0ead6 50%, #faf8f2 100%);
+    }
+
+    .decorative-line {
+      height: 3px;
+      background: repeating-linear-gradient(
+              90deg,
+              #8b4513 0px,
+              #8b4513 10px,
+              transparent 10px,
+              transparent 15px
+      );
+      margin: 8px 0;
+    }
+
+    .masthead {
+      font-family: 'Old Standard TT', serif;
+      font-size: 52px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      margin-bottom: 8px;
+      text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+      color: #4a2c17;
+    }
+
+    .est-date {
+      font-family: 'Old Standard TT', serif;
+      font-size: 11px;
+      font-style: italic;
+      color: #8b4513;
+      margin-bottom: 5px;
+    }
+
+    .date-info {
+      font-size: 16px;
+      margin: 12px 0;
+      font-weight: 600;
+      color: #4a2c17;
+      font-family: 'Old Standard TT', serif;
+    }
+
+    .persian-date {
+      font-size: 13px;
+      font-style: italic;
+      color: #8b4513;
+    }
+
+    .tagline {
+      font-size: 11px;
+      font-style: italic;
+      margin-top: 8px;
+      color: #6b4423;
+      border-top: 1px solid #8b4513;
+      padding-top: 5px;
+    }
+
+    .main-photo-section {
+      text-align: center;
+      margin: 25px 0;
+      background: #f0ead6;
+      padding: 20px;
+      border: 3px double #8b4513;
+    }
+
+    .main-photo {
+      width: 400px;
+      height: 300px;
+      margin: 0 auto 15px;
+      border: 4px solid #4a2c17;
+      box-shadow: 0 0 15px rgba(139, 69, 19, 0.4);
+      filter: sepia(100%) contrast(1.1) brightness(0.9);
+      background: #e6ddc4;
+      background-image: url('two.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 900;
+      margin-bottom: 15px;
+      color: #4a2c17;
+      text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.2);
+    }
+
+    .hero-subhead {
+      font-size: 16px;
+      font-style: italic;
+      color: #6b4423;
+      margin-bottom: 10px;
+    }
+
+    .main-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+
+    .article {
+      margin-bottom: 25px;
+    }
+
+    .headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #4a2c17;
+      border-bottom: 2px solid #8b4513;
+      padding-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .subheadline {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #6b4423;
+      font-style: italic;
+    }
+
+    .byline {
+      font-size: 11px;
+      font-style: italic;
+      margin-bottom: 10px;
+      color: #8b4513;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .column {
+      text-align: justify;
+      hyphens: auto;
+      text-indent: 15px;
+    }
+
+    .column p {
+      margin-bottom: 10px;
+    }
+
+    .two-column {
+      grid-column: span 2;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .sidebar {
+      background: linear-gradient(135deg, #f0ead6 0%, #e6ddc4 100%);
+      padding: 18px;
+      border: 3px double #8b4513;
+      margin-bottom: 20px;
+      box-shadow: inset 0 0 10px rgba(139, 69, 19, 0.2);
+    }
+
+    .sidebar h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      margin-bottom: 12px;
+      text-align: center;
+      color: #4a2c17;
+      border-bottom: 2px solid #8b4513;
+      padding-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .schedule-item {
+      margin-bottom: 10px;
+      font-size: 12px;
+      padding: 3px 0;
+      border-bottom: 1px dotted #8b4513;
+    }
+
+    .time {
+      font-weight: 600;
+      color: #4a2c17;
+    }
+
+    .portrait-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin: 30px 0;
+      padding: 25px;
+      background: #f0ead6;
+      border: 3px double #8b4513;
+    }
+
+    .portrait {
+      text-align: center;
+    }
+
+    .portrait-photo {
+      width: 200px;
+      height: 250px;
+      margin: 0 auto 15px;
+      border: 4px solid #4a2c17;
+      box-shadow: 0 0 12px rgba(139, 69, 19, 0.4);
+      filter: sepia(100%) contrast(1.1) brightness(0.9);
+      background: #e6ddc4;
+    }
+
+    .bride-photo {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250"><rect width="200" height="250" fill="%23e6ddc4"/><text x="100" y="120" text-anchor="middle" font-size="16" fill="%23654321">Bride Photo</text><text x="100" y="140" text-anchor="middle" font-size="14" fill="%23654321">Nesa</text></svg>');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .groom-photo {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250"><rect width="200" height="250" fill="%23e6ddc4"/><text x="100" y="120" text-anchor="middle" font-size="16" fill="%23654321">Groom Photo</text><text x="100" y="140" text-anchor="middle" font-size="14" fill="%23654321">Kiarash</text></svg>');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .portrait-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #4a2c17;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .bottom-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 20px;
+      border-top: 3px double #8b4513;
+      padding-top: 25px;
+      margin-top: 25px;
+    }
+
+    .vintage-box {
+      background: linear-gradient(135deg, #f0ead6 0%, #e6ddc4 100%);
+      border: 2px solid #8b4513;
+      padding: 12px;
+      text-align: center;
+      font-size: 11px;
+      box-shadow: inset 0 0 8px rgba(139, 69, 19, 0.2);
+    }
+
+    .vintage-box h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #4a2c17;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .crossword {
+      background: #faf8f2;
+      border: 2px solid #8b4513;
+      padding: 12px;
+    }
+
+    .crossword-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 18px);
+      gap: 1px;
+      margin: 12px 0;
+      justify-content: center;
+    }
+
+    .crossword-cell {
+      width: 18px;
+      height: 18px;
+      border: 1px solid #8b4513;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      background: #faf8f2;
+      color: #4a2c17;
+    }
+
+    .black-cell {
+      background: #4a2c17;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      padding: 20px;
+      border: 2px double #8b4513;
+      background: linear-gradient(45deg, #faf8f2 0%, #f0ead6 50%, #faf8f2 100%);
+      font-size: 11px;
+      color: #6b4423;
+    }
+
+    .ornament {
+      font-size: 20px;
+      color: #8b4513;
+      margin: 0 10px;
+    }
+
+    .drop-cap {
+      float: left;
+      font-family: 'Playfair Display', serif;
+      font-size: 60px;
+      line-height: 50px;
+      padding: 4px 8px 0 0;
+      color: #4a2c17;
+      font-weight: 700;
+    }
+
+    @media print {
+      body {
+        font-size: 11px;
+        background: white;
+      }
+      .newspaper {
+        padding: 0.25in;
+        box-shadow: none;
+      }
+      .masthead { font-size: 40px; }
+      .hero-headline { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+<div class="newspaper">
+  <!-- Ornamental Header -->
+  <header class="header">
+    <div class="est-date">Established in Love • Anno Domini 2025</div>
+    <div class="decorative-line"></div>
+    <h1 class="masthead">THE WEDDING HERALD</h1>
+    <div class="decorative-line"></div>
+    <div class="date-info">FRIDAY, THE THIRTEENTH DAY OF JUNE, 2025</div>
+    <div class="persian-date">23 خرداد 1404</div>
+    <div class="tagline">
+      <span class="ornament">❦</span>
+      "Chronicling Love's Greatest Triumph"
+      <span class="ornament">❦</span>
+      Special Wedding Edition
+      <span class="ornament">❦</span>
+      Vol. I, No. 1
+      <span class="ornament">❦</span>
+    </div>
+  </header>
+
+  <!-- Main Photo Section -->
+  <section class="main-photo-section ornamental-border">
+    <h1 class="hero-headline">MATRIMONIAL UNION CELEBRATED</h1>
+    <div class="hero-subhead">Miss Nesa & Mr. Kiarash Join Hearts in Sacred Ceremony</div>
+    <div class="main-photo"></div>
+    <p style="font-size: 14px; font-style: italic; color: #6b4423;">
+      "In the presence of family and friends, two souls become one in holy matrimony"
+    </p>
+  </section>
+
+  <!-- Portrait Section -->
+  <section class="portrait-section">
+    <div class="portrait">
+      <h2 class="portrait-title">The Bride</h2>
+      <div class="portrait-photo bride-photo"></div>
+      <div style="font-style: italic; color: #6b4423; font-size: 12px;">
+        Miss Nesa, radiant in her wedding attire, embodies grace and elegance on this most auspicious day.
+      </div>
+    </div>
+    <div class="portrait">
+      <h2 class="portrait-title">The Groom</h2>
+      <div class="portrait-photo groom-photo"></div>
+      <div style="font-style: italic; color: #6b4423; font-size: 12px;">
+        Mr. Kiarash, distinguished gentleman, stands ready to embark upon married life with joy and devotion.
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Grid -->
+  <div class="main-content">
+    <!-- Love Story Article -->
+    <article class="article two-column">
+      <h2 class="headline">A Chronicle of Courtship Most Tender</h2>
+      <div class="byline">By the Society Editor</div>
+      <div class="column">
+        <p><span class="drop-cap">I</span>n an age where true affection grows increasingly rare, the courtship of Miss Nesa and Mr. Kiarash stands as a beacon of genuine devotion and mutual regard. Their acquaintance, which began in the most natural of circumstances, has blossomed into a union that promises to endure through all seasons of life.</p>
+
+        <p>Those who have had the privilege of observing this couple speak unanimously of the tenderness and respect which characterizes their every interaction. "One cannot help but notice," remarks a dear friend of the bride, "the manner in which they attend to one another's words, and the gentle consideration they show in all their dealings."</p>
+
+        <p>Mr. Kiarash, a gentleman of refined sensibilities and keen intellect, found in Miss Nesa not merely a companion, but a kindred spirit whose wit and warmth matched his own. Miss Nesa, possessed of both beauty and wisdom, discovered in her intended a soul capable of appreciating her finest qualities whilst encouraging her continued growth.</p>
+
+        <p>Their engagement, announced with great joy amongst their circle, was received with universal approbation. The proposal itself, conducted with all the propriety befitting such a momentous occasion, was characterized by sincerity rather than ostentation—a reflection of the couple's preference for meaningful gesture over mere display.</p>
+
+        <p>As they prepare to exchange sacred vows upon this blessed day, Miss Nesa and Mr. Kiarash embark upon the grandest adventure of all—a life shared in perfect harmony, mutual support, and enduring love.</p>
+      </div>
+    </article>
+
+    <!-- Schedule Sidebar -->
+    <div class="sidebar">
+      <h3>Programme of Festivities</h3>
+      <div class="schedule-item">
+        <span class="time">Two O'Clock</span> - Arrival of Distinguished Guests
+      </div>
+      <div class="schedule-item">
+        <span class="time">Half Past Two</span> - Musical Prelude
+      </div>
+      <div class="schedule-item">
+        <span class="time">Three O'Clock</span> - Sacred Ceremony Commences
+      </div>
+      <div class="schedule-item">
+        <span class="time">Half Past Three</span> - Congratulatory Receiving Line
+      </div>
+      <div class="schedule-item">
+        <span class="time">Four O'Clock</span> - Refreshments & Social Hour
+      </div>
+      <div class="schedule-item">
+        <span class="time">Half Past Five</span> - Wedding Banquet
+      </div>
+      <div class="schedule-item">
+        <span class="time">Seven O'Clock</span> - Ceremonial Toasts
+      </div>
+      <div class="schedule-item">
+        <span class="time">Eight O'Clock</span> - First Waltz
+      </div>
+      <div class="schedule-item">
+        <span class="time">Half Past Eight</span> - Dancing Continues
+      </div>
+    </div>
+  </div>
+
+  <!-- Middle Section Articles -->
+  <div class="main-content">
+    <article class="article">
+      <h2 class="headline">Wedding Party Distinctions</h2>
+      <div class="byline">Profiles of the Supporting Cast</div>
+      <div class="column">
+        <p><strong>Maid of Honour:</strong> The bride's beloved sister, whose devotion and organizational prowess have proven invaluable in the wedding preparations.</p>
+
+        <p><strong>Best Man:</strong> The groom's esteemed brother, longtime confidant and companion in numerous adventures, prepared to offer both sage counsel and spirited merriment.</p>
+
+        <p><strong>Bridesmaids:</strong> A select assembly of the bride's dearest companions, each having supported her through life's various chapters with unwavering loyalty.</p>
+
+        <p><strong>Groomsmen:</strong> The groom's trusted associates, gentlemen of good character who bring their own cherished memories and jovial fellowship to this celebration.</p>
+      </div>
+    </article>
+
+    <article class="article">
+      <h2 class="headline">Venue of Distinction</h2>
+      <div class="byline">A Setting Most Sublime</div>
+      <div class="column">
+        <p>The wedding venue, selected with exquisite taste by the happy couple, provides an atmosphere of refined elegance befitting such a momentous occasion.</p>
+
+        <p>The estate's classical architecture, complemented by meticulously maintained gardens, creates an ambiance of timeless beauty that perfectly reflects the couple's sophisticated sensibilities.</p>
+
+        <p>The ceremony grounds offer intimate seating arrangements for family and treasured friends, whilst the reception pavilion provides ample accommodation for dining and dancing beneath the evening stars.</p>
+      </div>
+    </article>
+
+    <article class="article">
+      <h2 class="headline">Persian Customs Observed</h2>
+      <div class="byline">Honoring Ancient Traditions</div>
+      <div class="column">
+        <p>The celebration shall incorporate time-honored Persian wedding customs, including the sacred Sofreh Aghd ceremony, featuring symbolic elements representing prosperity, fertility, and enduring happiness.</p>
+
+        <p>Guests shall witness the honey ceremony, wherein the couple partakes of sweetness to ensure harmony in their marriage, alongside blessings with crystallized sugar for continued good fortune in all their endeavors.</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- Fun Facts Section -->
+  <div class="full-width ornamental-border">
+    <article class="article">
+      <h2 class="headline">Personal Particulars of the Happy Couple</h2>
+      <div class="main-content">
+        <div class="column">
+          <h3 class="subheadline">Regarding the Bride</h3>
+          <p>• Favours Italian culinary preparations, particularly pasta dishes prepared with artistry</p>
+          <p>• Possesses the remarkable ability to solve a Rubik's cube in less than two minutes</p>
+          <p>• Dreams of embarking upon a safari expedition to the wilds of Kenya</p>
+          <p>• Demonstrates a marked preference for coffee over tea in all circumstances</p>
+          <p>• Finds greatest joy in the spring season, delighting in nature's renewed blossoming</p>
+        </div>
+        <div class="column">
+          <h3 class="subheadline">Regarding the Groom</h3>
+          <p>• Pursues the musical arts with particular skill upon the guitar, composing original melodies</p>
+          <p>• Has achieved mastery in the preparation of traditional Persian rice, surpassing even family elders</p>
+          <p>• Envisions a grand motoring tour across the scenic landscapes of New Zealand</p>
+          <p>• Maintains evening hours by preference, being most productive during nocturnal periods</p>
+          <p>• Shows particular fondness for scientific fiction and educational documentary films</p>
+        </div>
+        <div class="column">
+          <h3 class="subheadline">As a United Pair</h3>
+          <p>• Their first encounter occurred at a coffee establishment, extending to four hours of delightful conversation</p>
+          <p>• Share a mutual passion for exploring new culinary establishments and gastronomic adventures</p>
+          <p>• Regularly embark upon weekend hiking expeditions in natural settings</p>
+          <p>• Plan to welcome a golden retriever named Charlie into their future household</p>
+          <p>• Maintain the charming tradition of recreating their first meeting each anniversary</p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="bottom-section">
+    <div class="crossword">
+      <h4 style="font-family: 'Playfair Display', serif; font-size: 12px; margin-bottom: 10px; text-align: center; color: #4a2c17;">Wedding Puzzle</h4>
+      <div class="crossword-grid">
+        <div class="crossword-cell">1</div>
+        <div class="crossword-cell black-cell"></div>
+        <div class="crossword-cell">2</div>
+        <div class="crossword-cell black-cell"></div>
+        <div class="crossword-cell">3</div>
+        <div class="crossword-cell black-cell"></div>
+        <div class="crossword-cell">4</div>
+        <div class="crossword-cell black-cell"></div>
+        <div class="crossword-cell"></div>
+        <div class="crossword-cell"></div>
+        <div class="crossword-cell black-cell"></div>
+        <div class="crossword-cell"></div>
+        <div class="crossword-cell black-cell"></div>
+        <div class="crossword-cell"></div>
+        <div class="crossword-cell">5</div>
+        <div class="crossword-cell"></div>
+        <div class="crossword-cell"></div>
+        <div class="crossword-cell"></div>
+        <div class="crossword-cell"></div>
+        <div class="crossword-cell"></div>
+        <div class="crossword-cell"></div>
+      </div>
+      <div style="font-size: 9px; color: #6b4423;">
+        <strong>Across:</strong><br>
+        1. Bride's name<br>
+        5. Wedding month<br>
+        <strong>Down:</strong><br>
+        2. Groom's name<br>
+        3. "I ___"<br>
+        4. Ring symbol
+      </div>
+    </div>
+
+    <div class="vintage-box">
+      <h4>Felicitations!</h4>
+      <p>From all your cherished friends and family who, though unable to attend in person, celebrate this joyous union in spirit and send their fondest regards!</p>
+    </div>
+
+    <div class="vintage-box">
+      <h4>Matrimonial Wisdom</h4>
+      <p style="font-style: italic;">"A successful marriage requires falling in love many times, always with the same person."</p>
+      <p style="font-size: 9px; margin-top: 5px;">- Mignon McLaughlin</p>
+    </div>
+
+    <div class="vintage-box">
+      <h4>Weather Report</h4>
+      <p><strong>13th June, 2025</strong><br>
+        Ideal matrimonial conditions!<br>
+        Bright sunshine with gentle clouds<br>
+        Temperature: 75°F<br>
+        Light breeze from the west<br>
+        <em>Perfect for outdoor celebrations</em></p>
+    </div>
+  </div>
+
+  <!-- Marriage Advice Section -->
+  <div class="full-width ornamental-border" style="margin-top: 30px;">
+    <article class="article">
+      <h2 class="headline">Counsel from Married Relations & Dear Friends</h2>
+      <div class="main-content">
+        <div class="column">
+          <p style="font-style: italic; color: #6b4423;">"Never retire for the evening whilst harboring anger, and always express your affection before departing the household."</p>
+          <p style="text-align: right; font-size: 11px; margin-top: 5px;">— The Bride's Parents</p>
+
+          <p style="font-style: italic; color: #6b4423; margin-top: 15px;">"Share laughter each day, particularly during times of trial and tribulation."</p>
+          <p style="text-align: right; font-size: 11px; margin-top: 5px;">— The Groom's Grandparents</p>
+        </div>
+        <div class="column">
+          <p style="font-style: italic; color: #6b4423;">"Prepare meals together, travel together, dream together—yet also allow space for individual growth and contemplation."</p>
+          <p style="text-align: right; font-size: 11px; margin-top: 5px;">— Dearest Friends</p>
+
+          <p style="font-style: italic; color: #6b4423; margin-top: 15px;">"The secret lies in being each other's most ardent supporter and advocate."</p>
+          <p style="text-align: right; font-size: 11px; margin-top: 5px;">— Married Cousins</p>
+        </div>
+        <div class="column">
+          <p style="font-style: italic; color: #6b4423;">"Open communication proves essential—discuss both momentous matters and trivial daily concerns with equal attention."</p>
+          <p style="text-align: right; font-size: 11px; margin-top: 5px;">— The Wedding Party</p>
+
+          <p style="font-style: italic; color: #6b4423; margin-top: 15px;">"Remember always the reasons for your initial affection, especially during ordinary, unremarkable days."</p>
+          <p style="text-align: right; font-size: 11px; margin-top: 5px;">— Family Friends</p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="ornament">❦</div>
+    <p style="font-family: 'Old Standard TT', serif; font-size: 13px; margin-bottom: 8px;">
+      THE WEDDING HERALD
+    </p>
+    <p>Special Edition in Honour of Miss Nesa & Mr. Kiarash • Friday, 13th June, 2025</p>
+    <p style="margin-top: 8px; font-style: italic;">"Where Happily Ever After Commences This Very Day"</p>
+    <div class="ornament" style="margin-top: 10px;">❦</div>
+    <p style="margin-top: 8px; font-size: 10px; color: #8b4513;">
+      Published with Greatest Affection by Family & Friends • Printed on Fine Paper with Sustainable Inks
+    </p>
+  </footer>
+</div>
+</body>
+</html>
